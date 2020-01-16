@@ -22,7 +22,6 @@ public class OrderWorker
     // Start listening to the workflow and activity task lists.
     factory.start();
 
-
   }
 
 }
