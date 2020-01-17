@@ -13,7 +13,7 @@ import workflow.contract.GreetingWorkflow;
 @RequestMapping(value = "/start/workflow")
 public class StarterController {
 
-  @GetMapping(value = "/greeting/{greet}", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/greeting/{greet}")
   public String startWorkflow(@PathVariable String greet) {
     System.out.println("greeting workflow started : " + greet );
     // Start a workflow execution. Usually this is done from another program.
