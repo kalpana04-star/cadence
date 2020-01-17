@@ -4,9 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>Checkout</module>
-		<module>OrderApp</module>
-    <module>Shipment</module>
     <module>commons</module>
 		<module>workflow</module>
 		<module>activities</module>
