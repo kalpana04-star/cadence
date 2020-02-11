@@ -31,18 +31,18 @@ public class StarterController {
   }
 
 
-  @GetMapping(value = "/greeting/{id}")
-  public String getWorkflow(@PathVariable String id) {
-    System.out.println("workflow  id: " + id );
-    // Start a workflow execution. Usually this is done from another program.
-    WorkflowClient workflowClient = WorkflowClient.newInstance(Constants.DOMAIN_SAMPLE);
-    Adapter
-    // Get a workflow stub using the same task list the worker uses.
-    GreetingWorkflow workflow = workflowClient.newWorkflowStub(GreetingWorkflow.class);
-    // Execute a workflow waiting for it to complete.
-    String greeting = workflow.getGreeting(greet);
-    System.out.println(greeting);
-    return greeting;
-  }
+//  @GetMapping(value = "/greeting/{id}")
+//  public String getWorkflow(@PathVariable String id) {
+//    System.out.println("workflow  id: " + id );
+//    // Start a workflow execution. Usually this is done from another program.
+//    WorkflowClient workflowClient = WorkflowClient.newInstance(Constants.DOMAIN_SAMPLE);
+//    Adapter
+//    // Get a workflow stub using the same task list the worker uses.
+//    GreetingWorkflow workflow = workflowClient.newWorkflowStub(GreetingWorkflow.class);
+//    // Execute a workflow waiting for it to complete.
+//    String greeting = workflow.getGreeting(greet);
+//    System.out.println(greeting);
+//    return greeting;
+//  }
 
 }
