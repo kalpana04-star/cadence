@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import utilties.Constants;
 
 @SpringBootApplication
-public class App {
+public class ActivitiesApp {
 
   public static void main(String[] args) {
-    SpringApplication.run(App.class, args);
+    SpringApplication.run(ActivitiesApp.class, args);
 
     // Start a worker that hosts only activity implementations.
     Worker.Factory factory = new Worker.Factory(Constants.DOMAIN_SAMPLE);

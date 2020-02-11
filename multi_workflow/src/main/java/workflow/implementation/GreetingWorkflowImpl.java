@@ -1,11 +1,11 @@
 package workflow.implementation;
 
 import activity.contract.GreetingActivities;
-import com.uber.cadence.workflow.Async;
-import com.uber.cadence.workflow.Promise;
+import com.uber.cadence.WorkflowExecution;
+import com.uber.cadence.client.WorkflowClient;
 import com.uber.cadence.workflow.Workflow;
+import java.time.Duration;
 import workflow.contract.GreetingWorkflow;
-import workflow.contract.JapaneseGreetingWorkflow;
 
 /**
  * GreetingWorkflow implementation that calls GreetingsActivities#composeGreeting.
@@ -20,6 +20,20 @@ public class GreetingWorkflowImpl implements GreetingWorkflow {
 
   @Override
   public String getGreeting(String name) {
+    System.out.println(getDate() + "English work flow STARTED and name = [" + name + "]"
+        + Thread.currentThread().getName()
+    +"Group: " +Thread.currentThread().getThreadGroup() +" Id: "+ Thread.currentThread().getId()
+    +" Workflow.getWorkflowInfo():"+Workflow.getWorkflowInfo());
+
+
+    Workflow.sleep( Duration.ofSeconds(20,0));
+
+    try {
+      Thread.sleep(3000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
 
     // Workflows are stateful. So a new stub must be created for each new child.
     //JapaneseGreetingWorkflow child = Workflow.newChildWorkflowStub(JapaneseGreetingWorkflow.class);
@@ -36,6 +50,7 @@ public class GreetingWorkflowImpl implements GreetingWorkflow {
     //String japanGreeting = greeting.get(); // blocks waiting for the child to complete.
 
     //return englishGreeting + "\n" + japanGreeting;
+    System.out.println(getDate() + "English work flow ENDED and name = [" + name + "]");
     return englishGreeting;
   }
 }

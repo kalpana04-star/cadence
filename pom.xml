@@ -8,6 +8,8 @@
 		<module>workflow</module>
 		<module>activities</module>
 		<module>workflow_starter</module>
+		<module>workflow_child</module>
+		<module>multi_workflow</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
